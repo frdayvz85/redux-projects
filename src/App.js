@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Country from './components/Country';
+import React, { useState, useEffect } from 'react';
+import { usePosition } from 'use-position';
+import WeatherDaily from './components/WeatherDaily';
+import "./App.css"
 
-function App() {
+const App = () => {
 
-  const [countries, setCountries] = useState([])
+  const [weather, setWeather] = useState();
+  const { latitude, longitude } = usePosition();
 
   useEffect(() => {
-    getAllCountries()
-  }, [countries])
+    latitude && longitude && getWeatherData(latitude, longitude);
+  }, [latitude, longitude])
 
-  const getAllCountries = async () => {
-    const data = await fetch('https://restcountries.eu/rest/v2/all');
-    const result = await data.json();
-    setCountries(result)
-    console.log(result)
+
+  const getWeatherData = async (lat, lon) => {
+    // const myAPI = process.env.REACT_APP_WEATHER_API_KEY;
+    const key = "45c5b515ed20787b6fce5bcc53f81a6f";
+    const lang = navigator.language.split('-')[0];
+
+    try {
+      const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&lang=${lang}&units=metric`);
+      const result = await data.json();
+      setWeather(result);
+
+      console.log(result)
+    } catch {
+      alert('Veri alınırken hata oluştu.')
+    }
   }
 
   return (
-    <div className="App">
-      <h1>Countries</h1>
-      <div className="countries">
-      {
-        countries.map((country) => (
-          <Country key={country.name} country={country} />
-        ))
-      }
-      </div>
+    <div>
+      <h1 className="project-title">React weather with API and location</h1>
+      <WeatherDaily weather={weather} />
     </div>
   )
 }
 
-export default App;
+export default App
