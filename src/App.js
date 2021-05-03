@@ -14,12 +14,11 @@ const App = () => {
 
 
   const getWeatherData = async (lat, lon) => {
-    // const myAPI = process.env.REACT_APP_WEATHER_API_KEY;
-    const key = "45c5b515ed20787b6fce5bcc53f81a6f";
+    const myAPI = process.env.REACT_APP_WEATHER_API_KEY;
     const lang = navigator.language.split('-')[0];
 
     try {
-      const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&lang=${lang}&units=metric`);
+      const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myAPI}&lang=${lang}&units=metric`);
       const result = await data.json();
       setWeather(result);
 
