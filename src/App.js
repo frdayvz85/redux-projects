@@ -14,9 +14,9 @@ const App = () => {
     category: "",
   })
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  // }, []);
+  }, []);
 
 
   const addToCart = (product) => {
