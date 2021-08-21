@@ -1,1 +1,23 @@
-
+.navbar {
+    height:12vh;
+    background-color: black;
+    display:flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    align-items: center;
+}
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+.navbar ul li {
+    margin: 0 1rem;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+}
+.logo a {
+    text-decoration: none;
+    color: white;
+}
