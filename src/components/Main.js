@@ -206,7 +206,7 @@ export default function Main(props) {
                                 variant="contained"
                                 color="primary"
                             >
-                                <i class="fas fa-chevron-left"></i> Back
+                                <i className="fas fa-chevron-left"></i> Back
                             </Button>
                             {activeStep === steps.length - 1 ? '' :
                                 <Button
@@ -215,7 +215,7 @@ export default function Main(props) {
                                     onClick={activeStep === steps.length - 1 ? downloadHandler : handleNext}
                                     className={classes.button}
                                 >
-                                    Next <i class="fas fa-chevron-right"></i>
+                                    Next <i className="fas fa-chevron-right"></i>
                                 </Button>
                             }
 

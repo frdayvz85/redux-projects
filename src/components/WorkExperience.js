@@ -58,7 +58,7 @@ const WorkExperience = ({ countries, state, handleChange }) => {
                                     onChange={handleChange}
                                 >
                                     {countries.map(country => (
-                                        <MenuItem value={country.name}>{country.name}</MenuItem>
+                                        <MenuItem value={country.name.common}>{country.name.common}</MenuItem>
                                     ))}
                                 </Select>
                             </FormControl>

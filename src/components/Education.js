@@ -26,7 +26,7 @@ const Education = ({ countries, state, handleChange }) => {
 
     const getUniversties = async () => {
         try {
-            const data = await fetch(`http://universities.hipolabs.com/search?name=${state.university}&country=Azerbaijan`)
+            const data = await fetch(`http://universities.hipolabs.com/search?name=${state.university}&country=${state.country}`)
             const response = await data.json()
             console.log(response)
             setUniversties(response)
@@ -89,7 +89,7 @@ const Education = ({ countries, state, handleChange }) => {
                                     onChange={handleChange}
                                 >
                                     {countries.map(country => (
-                                        <MenuItem value={country.name}>{country.name}</MenuItem>
+                                        <MenuItem value={country.name.common}>{country.name.common}</MenuItem>
                                     ))}
                                 </Select>
                             </FormControl>

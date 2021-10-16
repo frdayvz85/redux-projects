@@ -36,32 +36,32 @@ const Share = () => {
         }
     }
 
-    const shareUrl = 'http://github.com';
+    const shareUrl = 'https://create-resume-f.netlify.app';
     const title = 'Resume builder';
     return (
         <>
-            <Button class="view-modal" onClick={handleShare}><i class="fas fa-share-alt" title="Share"></i></Button>
-            <div class="popup">
+            <Button className="view-modal" onClick={handleShare}><i className="fas fa-share-alt" title="Share"></i></Button>
+            <div className="popup">
                 <header className="share-header">
                     <span>Share Resume site with others</span>
-                    <div class="close" onClick={handleShareClose}><i class="fas fa-times"></i></div>
+                    <div className="close" onClick={handleShareClose}><i className="fas fa-times"></i></div>
                 </header>
-                <div class="content">
+                <div className="content">
                     <p>Share this link via</p>
-                    <ul class="icons">
+                    <ul className="icons">
                         <FacebookShareButton
                             url={shareUrl}
                             quote={title}
                             className="Demo__some-network__share-button"
                         >
-                            <i class="fab fa-facebook-f"></i>
+                            <i className="fab fa-facebook-f"></i>
                         </FacebookShareButton>
                         <TwitterShareButton
                             url={shareUrl}
                             title={title}
                             className="Demo__some-network__share-button"
                         >
-                            <i class="fab fa-twitter"></i>
+                            <i className="fab fa-twitter"></i>
                         </TwitterShareButton>
                         <WhatsappShareButton
                             url={shareUrl}
@@ -69,17 +69,17 @@ const Share = () => {
                             separator=":: "
                             className="Demo__some-network__share-button"
                         >
-                            <i class="fab fa-whatsapp"></i>
+                            <i className="fab fa-whatsapp"></i>
                         </WhatsappShareButton>
                         <TelegramShareButton
                             url={shareUrl}
                             title={title}
                             className="Demo__some-network__share-button"
                         >
-                            <i class="fab fa-telegram-plane"></i>
+                            <i className="fab fa-telegram-plane"></i>
                         </TelegramShareButton>
                         <LinkedinShareButton url={shareUrl} className="Demo__some-network__share-button">
-                            <i class="fab fa-linkedin"></i>
+                            <i className="fab fa-linkedin"></i>
                         </LinkedinShareButton>
                         <EmailShareButton
                             url={shareUrl}
@@ -87,12 +87,12 @@ const Share = () => {
                             body="I recommend this website - "
                             className="Demo__some-network__share-button"
                         >
-                           <i class="fas fa-envelope"></i>
+                           <i className="fas fa-envelope"></i>
                         </EmailShareButton>
                     </ul>
                     <p>Or copy link</p>
-                    <div class="field">
-                        <i class="url-icon uil uil-link"></i>
+                    <div className="field">
+                        <i className="url-icon uil uil-link"></i>
                         <input type="text" readonly value={shareUrl} />
                         <button onClick={copyLink}>Copy</button>
                     </div>

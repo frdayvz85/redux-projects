@@ -52,7 +52,7 @@ const Questions = () => {
 
     const getCountries = async () => {
         try {
-            const data = await fetch('https://restcountries.eu/rest/v2/all')
+            const data = await fetch('https://restcountries.com/v3.1/all')
             const response = await data.json()
             console.log(response)
             setCountries(response)

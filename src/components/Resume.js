@@ -27,7 +27,7 @@ const Resume = ({ state }) => {
                         <div className="cv-name">{state.firstName} {state.lastName}</div>
                         <div className="cv-subname">Senior Frontend Developer</div>
                         <div className="cv-content">
-                            <div className="head-title">Exprecince</div>
+                            <div className="head-title">Experience</div>
                             <div className="cv-content-item">
                                 <div className="title">{state.speciality}</div>
                                 <div className="subtitle">{state.company}</div>

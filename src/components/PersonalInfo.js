@@ -73,7 +73,7 @@ const PersonalInfo = ({ countries, state, handleChange, handleChangePhoto }) => 
                                     onChange={handleChange}
                                 >
                                     {countries.map(country => (
-                                        <MenuItem value={country.name}>{country.name}</MenuItem>
+                                        <MenuItem key={country.name.common} value={country.name.common}>{country.name.common}</MenuItem>
                                     ))}
                                 </Select>
                             </FormControl>
@@ -144,7 +144,7 @@ const PersonalInfo = ({ countries, state, handleChange, handleChangePhoto }) => 
                             />
                             <div className="label">
                                 <label className="image-upload" htmlFor="input">
-                                    <i class="fas fa-arrow-circle-up"></i>
+                                    <i className="fas fa-arrow-circle-up"></i>
                                     Choose Photo
                                 </label>
                             </div>
